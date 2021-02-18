@@ -41,8 +41,7 @@ public class Itens {
     private String mes;
     private Boolean ativo;
 
-    private Double tot;
-    private String nomec;
+
 
 
 
