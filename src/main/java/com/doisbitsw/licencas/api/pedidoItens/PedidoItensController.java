@@ -302,8 +302,8 @@ public class PedidoItensController {
 
 
     @DeleteMapping("/{id}")
-    public ResponseEntity delete(@PathVariable("id") Long id) {
-        service.delete(id);
+    public ResponseEntity delete(@PathVariable("id") Long ids) {
+        service.delete(ids);
 
         return ResponseEntity.ok().build();
     }
