@@ -9,28 +9,28 @@ import java.net.URI;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/v1/pedidos")
-public class PedidoController {
+@RequestMapping("/api/v1/itens")
+public class ItensController {
     @Autowired
-    private PedidoService service;
+    private ItensService service;
 
 
     @GetMapping()
     public ResponseEntity get() {
-        List<PedidoDTO> carros = service.getCarros();
+        List<ItensDTO> carros = service.getCarros();
         return ResponseEntity.ok(carros);
     }
 
     @GetMapping("/{id}")
     public ResponseEntity get(@PathVariable("id") Long id) {
-        PedidoDTO carro = service.getCarroById(id);
+        ItensDTO carro = service.getCarroById(id);
 
         return ResponseEntity.ok(carro);
     }
 
     @GetMapping("/code/{code}")
     public ResponseEntity getCarrosByCode(@PathVariable("code") String code) {
-        List<PedidoDTO> carros = service.getCarrosByCode(code);
+        List<ItensDTO> carros = service.getCarrosByCode(code);
         return carros.isEmpty() ?
                 ResponseEntity.noContent().build() :
                 ResponseEntity.ok(carros);
@@ -38,7 +38,7 @@ public class PedidoController {
 
     @GetMapping("/escola/{escola}")
     public ResponseEntity getCarrosByEscola(@PathVariable("escola") Long escola) {
-        List<PedidoDTO> carros = service.getCarrosByEscola(escola);
+        List<ItensDTO> carros = service.getCarrosByEscola(escola);
         return carros.isEmpty() ?
                 ResponseEntity.noContent().build() :
                 ResponseEntity.ok(carros);
@@ -54,9 +54,9 @@ public class PedidoController {
 
     @PostMapping
 
-    public ResponseEntity post(@RequestBody Pedido pedido) {
+    public ResponseEntity post(@RequestBody Itens itens) {
 
-        PedidoDTO c = service.insert(pedido);
+        ItensDTO c = service.insert(itens);
 
         URI location = getUri(c.getId());
         return ResponseEntity.created(location).body(c);
@@ -85,16 +85,16 @@ public class PedidoController {
 
     @GetMapping("/id/{id}")
     public ResponseEntity getCId(@PathVariable("id") Long id) {
-        List<PedidoDTO> carros = service.getId(id);
+        List<ItensDTO> carros = service.getId(id);
         return carros.isEmpty() ?
                 ResponseEntity.noContent().build() :
                 ResponseEntity.ok(carros);
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity put(@PathVariable("id") Long id, @RequestBody Pedido pedido) {
-        pedido.setId(id);
-        PedidoDTO c = service.update(pedido, id);
+    public ResponseEntity put(@PathVariable("id") Long id, @RequestBody Itens itens) {
+        itens.setId(id);
+        ItensDTO c = service.update(itens, id);
         return c != null ?
                 ResponseEntity.ok(c) :
                 ResponseEntity.notFound().build();

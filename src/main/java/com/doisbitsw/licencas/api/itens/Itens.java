@@ -11,7 +11,7 @@ import javax.persistence.Id;
 @NoArgsConstructor
 @Data
 @Entity
-public class Pedido {
+public class Itens {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

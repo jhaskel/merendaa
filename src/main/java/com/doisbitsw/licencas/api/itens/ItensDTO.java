@@ -4,7 +4,7 @@ import lombok.Data;
 import org.modelmapper.ModelMapper;
 
 @Data
-public class PedidoDTO {
+public class ItensDTO {
     private Long id;
     private String code;
     private String nomeescola;
@@ -25,8 +25,8 @@ public class PedidoDTO {
     private Long temCart;
 
 
-    public static PedidoDTO create(Pedido pedido) {
+    public static ItensDTO create(Itens itens) {
         ModelMapper modelMapper = new ModelMapper();
-        return modelMapper.map(pedido, PedidoDTO.class);
+        return modelMapper.map(itens, ItensDTO.class);
     }
 }

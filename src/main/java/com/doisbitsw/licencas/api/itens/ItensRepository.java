@@ -6,16 +6,16 @@ import org.springframework.data.jpa.repository.Query;
 
 import java.util.List;
 
-public interface PedidoRepository extends JpaRepository<Pedido, Long> {
+public interface ItensRepository extends JpaRepository<Itens, Long> {
 
     @Query(value = "SELECT * FROM pedido where iscart = false order by id desc;", nativeQuery = true)
-    List<Pedido> findAll();
+    List<Itens> findAll();
 
     @Query(value = "SELECT *  FROM pedido where code = :code order by id desc;", nativeQuery = true)
-    List<Pedido> findByCode(String code);
+    List<Itens> findByCode(String code);
 
     @Query(value = "SELECT *  FROM pedido where escola = :escola order by id desc;", nativeQuery = true)
-    List<Pedido> findByEscola(Long escola);
+    List<Itens> findByEscola(Long escola);
 
     @Query(value = "SELECT COUNT(id) AS totalCart FROM pedido WHERE ischeck = false", nativeQuery = true)
     long findCart();
@@ -32,6 +32,6 @@ public interface PedidoRepository extends JpaRepository<Pedido, Long> {
     long findTemCart1(Long escola);
 
     @Query(value = "SELECT * FROM pedido WHERE id = :id ;", nativeQuery = true)
-    List<Pedido> findId(Long id);
+    List<Itens> findId(Long id);
 
 }
