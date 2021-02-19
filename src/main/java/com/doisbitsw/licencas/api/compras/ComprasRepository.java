@@ -18,7 +18,7 @@ public interface ComprasRepository extends JpaRepository<Compras, Long> {
     List<Compras> findAll3();
 
 
-    @Query(value = "SELECT * FROM itens WHERE pedido = :pedido and ischeck = false;", nativeQuery = true)
+    @Query(value = "SELECT * FROM itens WHERE pedido = :pedido ", nativeQuery = true)
     List<Compras> findByPedido(String pedido);
 
     @Query(value = "SELECT ite.*,sum(ite.total) AS tot FROM itens ite\n" +
