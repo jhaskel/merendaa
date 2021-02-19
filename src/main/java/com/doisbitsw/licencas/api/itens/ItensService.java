@@ -201,6 +201,11 @@ public class ItensService {
     }
 
 
+    public double getCart(Long escola){
+        return rep.findCart(escola);
+    }
+
+
 
 
 

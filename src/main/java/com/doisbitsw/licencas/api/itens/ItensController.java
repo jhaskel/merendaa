@@ -269,6 +269,11 @@ public class ItensController {
         return service.getDiversosEscola(escola,ano);
     }
 
+    @GetMapping("/cart/{escola}")
+    public double getCart(@PathVariable("escola") Long escola) {
+        return service.getCart(escola);
+    }
+
 
     @PostMapping
     public ResponseEntity post(@RequestBody Itens pedidoItens) {
