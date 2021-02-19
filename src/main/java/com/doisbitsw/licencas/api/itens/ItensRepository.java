@@ -8,8 +8,7 @@ import java.util.List;
 
 public interface ItensRepository extends JpaRepository<Itens, Long> {
 
-    @Query(value = "SELECT *  FROM pedido_itens WHERE  af = 0;", nativeQuery = true)
-    List<Itens> findAll();
+
 
     @Query(value = "SELECT * FROM pedido_itens WHERE af > 0  GROUP BY af;", nativeQuery = true)
     List<Itens> findAll2();
