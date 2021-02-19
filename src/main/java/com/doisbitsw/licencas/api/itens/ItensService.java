@@ -215,7 +215,7 @@ public class ItensService {
         return ItensDTO.create(rep.save(pedidoItens));
     }
 
-    public ItensDTO update(Itens pedidoItens, Long id) {
+    public ItensDTO update(Itens itens, Long id) {
         Assert.notNull(id,"Não foi possível atualizar o registro");
 
         // Busca o carro no banco de dados
@@ -223,30 +223,30 @@ public class ItensService {
         if(optional.isPresent()) {
             Itens db = optional.get();
             // Copiar as propriedades
-            db.setEscola(pedidoItens.getEscola());
-            db.setProduto(pedidoItens.getProduto());
-            db.setCategoria(pedidoItens.getCategoria());
-            db.setNivel(pedidoItens.getNivel());
-            db.setFornecedor(pedidoItens.getFornecedor());
-            db.setAno(pedidoItens.getAno());
-            db.setAf(pedidoItens.getAf());
-            db.setPedido(pedidoItens.getPedido());
-            db.setAlias(pedidoItens.getAlias());
-            db.setObs(pedidoItens.getObs());
-            db.setStatus(pedidoItens.getStatus());
-            db.setCreated(pedidoItens.getCreated());
-            db.setNomeescola(pedidoItens.getNomeescola());
-            db.setNomenivel(pedidoItens.getNomenivel());
-            db.setUnidade(pedidoItens.getUnidade());
-            db.setQuantidade(pedidoItens.getQuantidade());
-            db.setValor(pedidoItens.getValor());
-            db.setTotal(pedidoItens.getTotal());
-            db.setIsagro(pedidoItens.getIsagro());
-            db.setIsautorizado(pedidoItens.getIsautorizado());
-            db.setIscheck(pedidoItens.getIscheck());
-            db.setCod(pedidoItens.getCod());
-            db.setMes(pedidoItens.getMes());
-            db.setAtivo(pedidoItens.getAtivo());
+            db.setEscola(itens.getEscola());
+            db.setProduto(itens.getProduto());
+            db.setCategoria(itens.getCategoria());
+            db.setNivel(itens.getNivel());
+            db.setFornecedor(itens.getFornecedor());
+            db.setAno(itens.getAno());
+            db.setAf(itens.getAf());
+            db.setPedido(itens.getPedido());
+            db.setAlias(itens.getAlias());
+            db.setObs(itens.getObs());
+            db.setStatus(itens.getStatus());
+            db.setCreated(itens.getCreated());
+            db.setNomeescola(itens.getNomeescola());
+            db.setNomenivel(itens.getNomenivel());
+            db.setUnidade(itens.getUnidade());
+            db.setQuantidade(itens.getQuantidade());
+            db.setValor(itens.getValor());
+            db.setTotal(itens.getTotal());
+            db.setIsagro(itens.getIsagro());
+            db.setIsautorizado(itens.getIsautorizado());
+            db.setIscheck(itens.getIscheck());
+            db.setCod(itens.getCod());
+            db.setMes(itens.getMes());
+            db.setAtivo(itens.getAtivo());
 
             System.out.println("Carro id " + db.getId());
 

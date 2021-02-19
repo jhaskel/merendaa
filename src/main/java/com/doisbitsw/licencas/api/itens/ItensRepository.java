@@ -18,7 +18,7 @@ public interface ItensRepository extends JpaRepository<Itens, Long> {
     List<Itens> findAll3();
 
 
-    @Query(value = "SELECT * FROM itens WHERE pedido = '19'", nativeQuery = true)
+    @Query(value = "SELECT * FROM itens WHERE pedido = :pedido", nativeQuery = true)
     List<Itens> findByPedido(String pedido);
 
     @Query(value = "SELECT ite.*,sum(ite.total) AS tot,ite.cod AS nomec FROM itens ite\n" +
