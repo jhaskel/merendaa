@@ -128,6 +128,11 @@ public class ItensService {
     }
 
 
+    public List<ItensDTO> getProdutos(Long produto,Long ano) {
+        return rep.findProduto(produto,ano).stream().map(ItensDTO::create).collect(Collectors.toList());
+    }
+
+
     public double getTotal(Long ano){
         return rep.findTotal(ano);
     }

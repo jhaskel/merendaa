@@ -131,6 +131,13 @@ public interface ItensRepository extends JpaRepository<Itens, Long> {
             "GROUP BY ite.escola ", nativeQuery = true)
     List<Itens> findMediaAlunosNivel(Long nivel,Long ano);
 
+    @Query(value = "SELECT *, SUM(ite.quantidade) AS quant , ite.cod AS nomec\n" +
+            "FROM itens ite \n" +
+            "INNER JOIN af ON af.code = ite.af\n" +
+            "WHERE ite.ano = :ano and  af.ativo = true and ite.produto = :produto group BY ite.escola", nativeQuery = true)
+    List<Itens> findProduto(Long produto,Long ano);
+
+
 
     @Query(value = "SELECT sum(ite.total) as tot  FROM itens ite\n" +
             "INNER JOIN af ON af.code = ite.af\n" +
