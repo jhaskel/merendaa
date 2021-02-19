@@ -23,7 +23,7 @@ public interface ComprasRepository extends JpaRepository<Compras, Long> {
 
     @Query(value = "SELECT ite.*,sum(ite.total) AS tot,ite.cod AS nomec FROM itens ite\n" +
             "\n" +
-            " WHERE ite.pedido = '1611942997' \n" +
+            " WHERE ite.pedido = :pedido \n" +
             " AND ite.ativo = true  \n" +
             " GROUP BY ite.id\n" +
             " ORDER BY ite.fornecedor, ite.alias  ", nativeQuery = true)

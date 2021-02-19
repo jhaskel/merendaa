@@ -47,13 +47,15 @@ public class ComprasController {
     }
 
 
-    @GetMapping("/pedidoall/{pedido}")
+    @GetMapping("/cart/{pedido}")
     public ResponseEntity getCarrosByPedidoAll(@PathVariable("pedido") String pedido) {
         List<ComprasDTO> carros = service.getCarrosByPedidoAll(pedido);
         return carros.isEmpty() ?
                 ResponseEntity.noContent().build() :
                 ResponseEntity.ok(carros);
     }
+
+
 
 
     @GetMapping("/af/{af}")
