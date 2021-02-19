@@ -21,7 +21,7 @@ public interface ComprasRepository extends JpaRepository<Compras, Long> {
     @Query(value = "SELECT * FROM itens WHERE pedido = :pedido and ischeck = false;", nativeQuery = true)
     List<Compras> findByPedido(String pedido);
 
-    @Query(value = "SELECT ite.*,sum(ite.total) AS tot,ite.cod AS nomec FROM itens ite\n" +
+    @Query(value = "SELECT ite.*,sum(ite.total) AS tot FROM itens ite\n" +
             "\n" +
             " WHERE ite.pedido = :pedido \n" +
             " AND ite.ativo = true  \n" +

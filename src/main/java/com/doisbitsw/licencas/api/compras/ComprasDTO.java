@@ -31,6 +31,8 @@ public class ComprasDTO {
     private String mes;
     private Boolean ativo;
 
+    private Double tot;
+
     public static ComprasDTO create(Compras compras) {
         ModelMapper modelMapper = new ModelMapper();
         return modelMapper.map(compras, ComprasDTO.class);
