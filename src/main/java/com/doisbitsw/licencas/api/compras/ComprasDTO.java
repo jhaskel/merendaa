@@ -30,8 +30,10 @@ public class ComprasDTO {
     private String status;
     private String mes;
     private Boolean ativo;
+    private Long licitacao;
 
     private Double tot;
+
 
     public static ComprasDTO create(Compras compras) {
         ModelMapper modelMapper = new ModelMapper();
