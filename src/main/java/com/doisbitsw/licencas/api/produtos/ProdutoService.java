@@ -67,6 +67,7 @@ public class ProdutoService {
             db.setModified(produto.getModified());
             db.setEscolas(produto.getEscolas());
             db.setAtivo(produto.getAtivo());
+            db.setValor(produto.getValor());
 
             System.out.println("Carro id " + db.getId());
 
