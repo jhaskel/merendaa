@@ -31,6 +31,7 @@ public class ComprasDTO {
     private String mes;
     private Boolean ativo;
     private Long licitacao;
+    private String processo;
 
     private Double tot;
 

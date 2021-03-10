@@ -40,6 +40,8 @@ public class Itens {
     private String status;
     private String mes;
     private Boolean ativo;
+    private String processo;
+
 
     private Double tot;
     private String nomec;

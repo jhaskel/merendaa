@@ -41,6 +41,7 @@ public class Compras {
     private String mes;
     private Boolean ativo;
     private Long licitacao;
+    private String processo;
 
 
 
