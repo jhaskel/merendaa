@@ -1,0 +1,25 @@
+package com.doisbitsw.licencas.api.contabilidade;
+
+import lombok.Data;
+import org.modelmapper.ModelMapper;
+
+@Data
+public class ContabilidadeDTO {
+    private Long id;
+    private Long orgao;
+    private String nomeOrgao;
+    private Long unidade;
+    private String nomeUnidade;
+    private Long projeto;
+    private String nomeProjeto;
+    private Long cod;
+    private String elemento;
+    private Long nivel;
+
+
+
+    public static ContabilidadeDTO create(Contabilidade contabilidade) {
+        ModelMapper modelMapper = new ModelMapper();
+        return modelMapper.map(contabilidade, ContabilidadeDTO.class);
+    }
+}
