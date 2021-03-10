@@ -32,6 +32,7 @@ public class Produto {
     private Boolean ativo;
     private String created;
     private String modified;
+    private String processo;
 
 
 
