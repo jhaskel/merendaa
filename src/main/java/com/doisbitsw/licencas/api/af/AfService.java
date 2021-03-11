@@ -62,6 +62,7 @@ public class AfService {
             db.setAtivo(af.getAtivo());
             db.setPedido(af.getPedido());
             db.setTotal(af.getTotal());
+            db.setDespesa(af.getDespesa());
 
 
             System.out.println("Af id " + db.getId());
