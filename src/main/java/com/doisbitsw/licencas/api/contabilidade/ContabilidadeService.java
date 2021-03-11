@@ -27,8 +27,8 @@ public class ContabilidadeService {
     }
 
 
-    public List<ContabilidadeDTO> getCod(Long cod) {
-        return rep.findCod(cod).stream().map(ContabilidadeDTO::create).collect(Collectors.toList());
+    public List<ContabilidadeDTO> getCod(Long cod, Long nivel) {
+        return rep.findCod(cod,nivel).stream().map(ContabilidadeDTO::create).collect(Collectors.toList());
     }
 
     public List<ContabilidadeDTO> getNivel(Long nivel) {

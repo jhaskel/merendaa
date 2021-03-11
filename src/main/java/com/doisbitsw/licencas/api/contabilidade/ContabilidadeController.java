@@ -30,9 +30,9 @@ public class ContabilidadeController {
         return ResponseEntity.ok(carro);
     }
 
-    @GetMapping("/cod/{cod}")
-    public ResponseEntity getCod(@PathVariable("cod") Long cod) {
-        List<ContabilidadeDTO> carros = service.getCod(cod);
+    @GetMapping("/cod/{cod}/{nivel}")
+    public ResponseEntity getCod(@PathVariable("cod") Long cod,@PathVariable("nivel") Long nivel) {
+        List<ContabilidadeDTO> carros = service.getCod(cod,nivel);
         return carros.isEmpty() ?
                 ResponseEntity.noContent().build() :
                 ResponseEntity.ok(carros);
