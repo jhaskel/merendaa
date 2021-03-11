@@ -17,6 +17,7 @@ public class AfDTO {
     private Boolean ativo;
     private String pedido;
     private Double total;
+    private Long despesa;
 
     private Long totalAf;
 
