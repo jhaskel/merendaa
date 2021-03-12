@@ -61,6 +61,11 @@ public class ItensService {
     }
 
 
+    public List<ItensDTO> getMaisPedidos( Long ano) {
+        return rep.findMaisPedidos(ano).stream().map(ItensDTO::create).collect(Collectors.toList());
+    }
+
+
     public List<ItensDTO> getByFornecedor(Long fornecedor) {
         return rep.findByFornecedor(fornecedor).stream().map(ItensDTO::create).collect(Collectors.toList());
     }

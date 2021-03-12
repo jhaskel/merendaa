@@ -104,6 +104,14 @@ public class ItensController {
                 ResponseEntity.ok(carros);
     }
 
+    @GetMapping("/maispedidos/{ano}")
+    public ResponseEntity getMaisPedidos(@PathVariable("ano") Long ano) {
+        List<ItensDTO> carros = service.getMaisPedidos(ano);
+        return carros.isEmpty() ?
+                ResponseEntity.noContent().build() :
+                ResponseEntity.ok(carros);
+    }
+
     @GetMapping("/totalMes/{ano}")
     public ResponseEntity getTotalMes(@PathVariable("ano") Long ano) {
         List<ItensDTO> carros = service.getTotalMes(ano);
