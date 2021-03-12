@@ -18,6 +18,7 @@ public class AfDTO {
     private String pedido;
     private Double total;
     private Long despesa;
+    private String numero;
 
     private Long totalAf;
 
