@@ -25,6 +25,8 @@ public class Contabilidade {
     private Long cod;
     private String elemento;
     private Long nivel;
+    private Double orcamento;
+
 
 
 

@@ -57,6 +57,7 @@ public class ContabilidadeService {
             db.setOrgao(contabilidade.getOrgao());
             db.setProjeto(contabilidade.getProjeto());
             db.setUnidade(contabilidade.getUnidade());
+            db.setOrcamento(contabilidade.getOrcamento());
 
             System.out.println("Af id " + db.getId());
 
