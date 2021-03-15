@@ -42,7 +42,6 @@ public class Itens {
     private Boolean ativo;
     private String processo;
 
-
     private Double tot;
     private String nomec;
 

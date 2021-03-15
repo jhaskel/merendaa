@@ -120,13 +120,7 @@ public class ItensController {
                 ResponseEntity.ok(carros);
     }
 
-    @GetMapping("/mais/{ano}")
-    public ResponseEntity getMais(@PathVariable("ano") Long ano) {
-        List<ItensDTO> carros = service.getMais(ano);
-        return carros.isEmpty() ?
-                ResponseEntity.noContent().build() :
-                ResponseEntity.ok(carros);
-    }
+
 
     @GetMapping("/totalMesNivel/{nivel}/{ano}")
     public ResponseEntity getTotalMesNivel(@PathVariable("nivel") Long nivel,@PathVariable("ano") Long ano) {

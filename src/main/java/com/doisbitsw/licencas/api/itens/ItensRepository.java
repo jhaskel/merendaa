@@ -59,8 +59,7 @@ public interface ItensRepository extends JpaRepository<Itens, Long> {
             "                     WHERE af.ativo= true and ite.ano = :ano AND ite.af > 0 ", nativeQuery = true)
     List<Itens> findEscolaAll(Long ano);
 
-    @Query(value = "SELECT ite.* FROM itens ite where ite.ano = :ano ", nativeQuery = true)
-    List<Itens> findMais(Long ano);
+
 
     @Query(value = "SELECT ite.*,sum(ite.quantidade) as tot,ite.cod AS nomec FROM itens ite\n" +
             "INNER JOIN af ON af.code = ite.af\n" +

@@ -207,6 +207,11 @@ public class ComprasService {
         return ComprasDTO.create(rep.save(compras));
     }
 
+    public List<ComprasDTO> getMais(Long ano) {
+        return rep.findMais(ano).stream().map(ComprasDTO::create).collect(Collectors.toList());
+    }
+
+
     public ComprasDTO update(Compras compras, Long id) {
         Assert.notNull(id,"Não foi possível atualizar o registro");
 

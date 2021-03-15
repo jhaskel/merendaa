@@ -50,9 +50,6 @@ public class ItensService {
         return rep.findByAf(af).stream().map(ItensDTO::create).collect(Collectors.toList());
     }
 
-    public List<ItensDTO> getMais(Long ano) {
-        return rep.findMais(ano).stream().map(ItensDTO::create).collect(Collectors.toList());
-    }
 
 
     public List<ItensDTO> getCarrosByEscola(Long escola, Long pedido) {

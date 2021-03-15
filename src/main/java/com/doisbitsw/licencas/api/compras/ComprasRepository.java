@@ -226,4 +226,7 @@ public interface ComprasRepository extends JpaRepository<Compras, Long> {
             "AND (ite.categoria = 4 OR ite.categoria = 7)  ", nativeQuery = true)
     double findDiversosEscola(Long escola, Long ano);
 
+    @Query(value = "SELECT ite.* FROM itens ite where ite.ano = :ano ", nativeQuery = true)
+    List<Compras> findMais(Long ano);
+
 }
