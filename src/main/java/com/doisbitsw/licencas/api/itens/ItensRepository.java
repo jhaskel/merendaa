@@ -40,7 +40,10 @@ public interface ItensRepository extends JpaRepository<Itens, Long> {
     List<Itens> findByEscola(Long escola, Long pedido);
 
 
-    @Query(value = "SELECT ite.* FROM itens ite where ite.ano = :ano ", nativeQuery = true)
+    @Query(value = "SELECT *,SUM(ite.total) AS tot\\n\" +\n" +
+            "            \"FROM itens ite\\n\" +\n" +
+            "            \"where ite.ano = :ano\\n\" +\n" +
+            "            \"group BY ite.produto ORDER BY tot desc ", nativeQuery = true)
     List<Itens> findMaisPedidos( Long ano);
 
     @Query(value = "SELECT * FROM itens ite\n" +
