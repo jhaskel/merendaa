@@ -33,6 +33,7 @@ public class ItensDTO {
     private String processo;
 
     private Double tot;
+    private Double quant;
     private Double totAgro;
     private Double tots;
     private Double totalPedido;

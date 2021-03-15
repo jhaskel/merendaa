@@ -45,6 +45,7 @@ public class Itens {
 
     private Double tot;
     private String nomec;
+    private Double quant;
 
 
 }
