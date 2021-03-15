@@ -42,9 +42,8 @@ public interface ItensRepository extends JpaRepository<Itens, Long> {
 
     @Query(value = "SELECT ite.*,sum(ite.total) AS tot,ite.cod AS nomec FROM itens ite \n" +
             " WHERE ite.ano = :ano \n" +
-            " AND ite.ativo = true \n" +
-            " GROUP BY ite.id \n" +
-            " ORDER BY ite.fornecedor, ite.alias ", nativeQuery = true)
+            " GROUP BY ite.produto \n" +
+            " ORDER BY ite.produto", nativeQuery = true)
     List<Itens> findMaisPedidos( Long ano);
 
     @Query(value = "SELECT * FROM itens ite\n" +
