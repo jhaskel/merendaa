@@ -43,7 +43,6 @@ public class Itens {
     private String processo;
 
     private Double tot;
-    private Double quan;
     private String nomec;
 
 
