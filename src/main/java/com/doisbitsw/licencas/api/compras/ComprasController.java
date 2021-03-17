@@ -46,13 +46,7 @@ public class ComprasController {
                 ResponseEntity.ok(carros);
     }
 
-    @GetMapping("/mais/{ano}")
-    public ResponseEntity getMais(@PathVariable("ano") Long ano) {
-        List<ComprasDTO> carros = service.getMais(ano);
-        return carros.isEmpty() ?
-                ResponseEntity.noContent().build() :
-                ResponseEntity.ok(carros);
-    }
+
 
 
     @GetMapping("/cart/{pedido}")

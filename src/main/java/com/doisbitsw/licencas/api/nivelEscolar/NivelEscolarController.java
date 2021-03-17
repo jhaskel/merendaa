@@ -33,6 +33,14 @@ public class NivelEscolarController {
         return service.getRe(id);
     }
 
+    @GetMapping("/id/{id}")
+    public ResponseEntity getId(@PathVariable("id") Long id) {
+        List<NivelEscolarDTO> carros = service.getId(id);
+        return carros.isEmpty() ?
+                ResponseEntity.noContent().build() :
+                ResponseEntity.ok(carros);
+    }
+
     @PostMapping
 
     public ResponseEntity post(@RequestBody NivelEscolar nivelEscolar) {

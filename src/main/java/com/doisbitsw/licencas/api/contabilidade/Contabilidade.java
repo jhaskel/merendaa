@@ -27,18 +27,5 @@ public class Contabilidade {
     private Long nivel;
     private Double orcamento;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
 

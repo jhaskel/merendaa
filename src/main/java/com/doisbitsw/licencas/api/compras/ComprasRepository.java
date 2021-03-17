@@ -226,10 +226,6 @@ public interface ComprasRepository extends JpaRepository<Compras, Long> {
             "AND (ite.categoria = 4 OR ite.categoria = 7)  ", nativeQuery = true)
     double findDiversosEscola(Long escola, Long ano);
 
-    @Query(value = "SELECT *,SUM(ite.total) AS tot\n" +
-            "FROM itens ite\n" +
-            "where ite.ano = :ano\n" +
-            "group BY ite.produto ORDER BY tot desc", nativeQuery = true)
-    List<Compras> findMais(Long ano);
+
 
 }

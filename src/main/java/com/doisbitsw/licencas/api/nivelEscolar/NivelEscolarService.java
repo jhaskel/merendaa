@@ -29,6 +29,9 @@ public class NivelEscolarService {
         return rep.findNome(id);
     }
 
+    public List<NivelEscolarDTO> getId(Long id) {
+        return rep.findId(id).stream().map(NivelEscolarDTO::create).collect(Collectors.toList());
+    }
 
 
     public NivelEscolarDTO insert(NivelEscolar nivelEscolar) {
