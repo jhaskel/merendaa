@@ -59,6 +59,11 @@ public class UnidadeEscolarController {
         return service.getQuantEscolaNivel(nivel);
     }
 
+    @GetMapping("/nome/{id}")
+    public String getNome(@PathVariable("id") Long id) {
+        return service.getNome(id);
+    }
+
 
     @PostMapping
 

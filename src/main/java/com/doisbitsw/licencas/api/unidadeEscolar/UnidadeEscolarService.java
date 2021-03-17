@@ -46,6 +46,10 @@ public class UnidadeEscolarService {
         return UnidadeEscolarDTO.create(rep.save(unidadeEscolar));
     }
 
+    public String getNome(Long id){
+        return rep.findNome(id);
+    }
+
 
     public UnidadeEscolarDTO update(UnidadeEscolar unidadeEscolar, Long id) {
         Assert.notNull(id,"Não foi possível atualizar o registro");

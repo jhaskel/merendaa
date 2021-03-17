@@ -41,6 +41,8 @@ public class NivelEscolarController {
                 ResponseEntity.ok(carros);
     }
 
+
+
     @PostMapping
 
     public ResponseEntity post(@RequestBody NivelEscolar nivelEscolar) {
