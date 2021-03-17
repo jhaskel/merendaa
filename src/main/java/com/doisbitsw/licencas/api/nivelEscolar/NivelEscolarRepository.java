@@ -10,7 +10,7 @@ public interface NivelEscolarRepository extends JpaRepository<NivelEscolar, Long
     @Query(value = "select nome from nivel_escolar where id = :id", nativeQuery = true)
     String findNome(Long id);
 
-    @Query(value = "select nome from nivel_escolar where id = :id", nativeQuery = true)
+    @Query(value = "select * from nivel_escolar where id = :id", nativeQuery = true)
     List<NivelEscolar> findId(Long id);
 
 }
