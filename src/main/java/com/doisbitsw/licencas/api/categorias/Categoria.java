@@ -18,6 +18,8 @@ public class Categoria {
     private Long id;
     private String nome;
     private String image;
+    private Boolean isativo;
+
 
 
 

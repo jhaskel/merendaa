@@ -27,6 +27,13 @@ public class CategoriaController {
 
         return ResponseEntity.ok(carro);
     }
+    @GetMapping("/ativo")
+    public ResponseEntity getAtivo() {
+        List<CategoriaDTO> carros = service.getAtivo();
+        return carros.isEmpty() ?
+                ResponseEntity.noContent().build() :
+                ResponseEntity.ok(carros);
+    }
 
 
 

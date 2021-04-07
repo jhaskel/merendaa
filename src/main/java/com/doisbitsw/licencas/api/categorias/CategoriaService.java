@@ -26,6 +26,11 @@ public class CategoriaService {
     }
 
 
+    public List<CategoriaDTO> getAtivo() {
+        return rep.findAtivo().stream().map(CategoriaDTO::create).collect(Collectors.toList());
+    }
+
+
 
     public CategoriaDTO insert(Categoria categoria) {
         Assert.isNull(categoria.getId(),"Não foi possível inserir o registro");
@@ -42,6 +47,7 @@ public class CategoriaService {
             // Copiar as propriedades
             db.setNome(categoria.getNome());
             db.setImage(categoria.getImage());
+            db.setIsativo(categoria.getIsativo());
             System.out.println("Carro id " + db.getId());
 
             // Atualiza o carro
