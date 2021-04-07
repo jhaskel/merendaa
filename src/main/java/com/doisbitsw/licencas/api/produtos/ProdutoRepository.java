@@ -12,13 +12,9 @@ public interface ProdutoRepository extends JpaRepository<Produto, Long> {
     List<Produto> findAll();
 
 
-    @Query(value = "SELECT * FROM produto p\n" +
-            "            WHERE p.ativo = true and p.id NOT IN (\n" +
-            "\t\t\t\tSELECT produto FROM itens ite \n" +
-            "\t\t\t\tINNER JOIN pedido ped ON ped.code = ite.pedido\n" +
-            "\t\t\t\tWHERE ite.escola = :escola AND ped.iscart = true\n" +
-            "\t\t\t\t)\n" +
-            "\t\t\t\t ORDER BY p.categoria;  ", nativeQuery = true)
+    @Query(value = "SELECT * FROM produto p INNER JOIN categoria cat ON cat.id = p.categoria \n" +
+            "WHERE p.ativo = TRUE AND cat.isativo = true and p.id NOT IN (SELECT produto FROM itens ite \n" +
+            "INNER JOIN pedido ped ON ped.code = ite.pedido WHERE ite.escola = :escola AND ped.iscart = TRUE) ORDER BY p.categoria;  ", nativeQuery = true)
     List<Produto> findByEcola(Long escola);
 
 
