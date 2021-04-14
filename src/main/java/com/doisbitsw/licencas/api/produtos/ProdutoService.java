@@ -35,6 +35,11 @@ public class ProdutoService {
     }
 
 
+    public List<ProdutoDTO> getId(Long id) {
+        return rep.findId(id).stream().map(ProdutoDTO::create).collect(Collectors.toList());
+    }
+
+
     public List<ProdutoDTO> getMenos() {
         return rep.findMenos().stream().map(ProdutoDTO::create).collect(Collectors.toList());
     }

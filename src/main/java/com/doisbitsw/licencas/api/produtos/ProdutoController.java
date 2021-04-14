@@ -44,6 +44,14 @@ public class ProdutoController {
                 ResponseEntity.ok(carros);
     }
 
+    @GetMapping("/id/{id}")
+    public ResponseEntity getId(@PathVariable("id") Long id) {
+        List<ProdutoDTO> carros = service.getId(id);
+        return carros.isEmpty() ?
+                ResponseEntity.noContent().build() :
+                ResponseEntity.ok(carros);
+    }
+
     @GetMapping("/menos")
     public ResponseEntity getMenos() {
         List<ProdutoDTO> carros = service.getMenos();
