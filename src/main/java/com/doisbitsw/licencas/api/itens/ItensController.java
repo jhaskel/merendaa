@@ -292,6 +292,11 @@ public class ItensController {
         return service.getCart(escola);
     }
 
+    @GetMapping("/estoque/{id}")
+    public double getEstoque(@PathVariable("id") Long id) {
+        return service.getEstoque(id);
+    }
+
 
     @PostMapping
     public ResponseEntity post(@RequestBody Itens pedidoItens) {

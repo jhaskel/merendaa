@@ -245,5 +245,11 @@ public interface ItensRepository extends JpaRepository<Itens, Long> {
     @Query(value = "SELECT count(ite.id) as tot FROM itens ite INNER JOIN pedido ped ON ped.code = ite.pedido WHERE  ite.ativo = true AND ped.ativo=true AND ite.escola=:escola AND ped.iscart = true", nativeQuery = true)
     long findCart(Long escola);
 
+    @Query(value = " SELECT sum(ite.quantidade) as tot from itens ite\n" +
+            "INNER JOIN af ON af.code = ite.af\n" +
+            "INNER JOIN produto pro ON pro.id = ite.produto\n" +
+            "WHERE  af.ativo = TRUE AND ite.produto = :id", nativeQuery = true)
+    long findEstoque(Long id);
+
 }
 

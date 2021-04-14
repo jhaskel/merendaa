@@ -216,6 +216,10 @@ public class ItensService {
         return rep.findCart(escola);
     }
 
+    public double getEstoque(Long id){
+        return rep.findEstoque(id);
+    }
+
 
 
 
