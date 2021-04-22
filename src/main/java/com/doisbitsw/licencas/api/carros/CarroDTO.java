@@ -1,6 +1,7 @@
 package com.doisbitsw.licencas.api.carros;
 
 import lombok.Data;
+import org.apache.commons.lang3.ObjectUtils;
 import org.modelmapper.ModelMapper;
 
 @Data
@@ -24,4 +25,7 @@ public class CarroDTO {
         ModelMapper modelMapper = new ModelMapper();
         return modelMapper.map(carro, CarroDTO.class);
     }
+
+
+
 }

@@ -24,8 +24,5 @@ public class Carro {
     private String latitude;
     private String longitude;
 
-
-
-
 }
 

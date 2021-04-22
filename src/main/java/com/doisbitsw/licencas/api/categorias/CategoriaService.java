@@ -15,12 +15,12 @@ public class CategoriaService {
     @Autowired
 
     private CategoriaRepository rep;
-    public List<CategoriaDTO> getCarros() {
+    public List<CategoriaDTO> getCategorias() {
         List<CategoriaDTO> list = rep.findAll().stream().map(CategoriaDTO::create).collect(Collectors.toList());
         return list;
     }
 
-    public CategoriaDTO getCarroById(Long id) {
+    public CategoriaDTO getCategoriaById(Long id) {
         Optional<Categoria> carro = rep.findById(id);
         return carro.map(CategoriaDTO::create).orElseThrow(() -> new ObjectNotFoundException("Carro não encontrado"));
     }

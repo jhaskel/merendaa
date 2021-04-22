@@ -28,9 +28,6 @@ public class ConfigController {
         return ResponseEntity.ok(carro);
     }
 
-
-
-
     @PostMapping
 
     public ResponseEntity post(@RequestBody Config config) {

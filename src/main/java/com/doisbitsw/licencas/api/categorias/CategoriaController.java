@@ -17,13 +17,13 @@ public class CategoriaController {
 
     @GetMapping()
     public ResponseEntity get() {
-        List<CategoriaDTO> carros = service.getCarros();
+        List<CategoriaDTO> carros = service.getCategorias();
         return ResponseEntity.ok(carros);
     }
 
     @GetMapping("/{id}")
     public ResponseEntity get(@PathVariable("id") Long id) {
-        CategoriaDTO carro = service.getCarroById(id);
+        CategoriaDTO carro = service.getCategoriaById(id);
 
         return ResponseEntity.ok(carro);
     }

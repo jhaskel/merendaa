@@ -8,7 +8,6 @@ import java.util.List;
 
 public interface AfRepository extends JpaRepository<Af, Long> {
     @Query(value = "SELECT * FROM af WHERE ativo = TRUE ORDER BY id desc", nativeQuery = true)
-
     List<Af> findAll();
 
     @Query(value = "SELECT * FROM af\n" +
