@@ -4,10 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @NoArgsConstructor
 @Data
@@ -24,7 +21,7 @@ public class Carro {
     private String urlVideo;
     private String latitude;
     private String longitude;
-    @JsonIgnore
+    @Transient
     private String teste;
 
 
