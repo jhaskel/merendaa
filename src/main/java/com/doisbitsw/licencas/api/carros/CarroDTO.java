@@ -14,7 +14,6 @@ public class CarroDTO {
     private String urlVideo;
     private String latitude;
     private String longitude;
-    @JsonIgnore
     private String teste;
 
 
