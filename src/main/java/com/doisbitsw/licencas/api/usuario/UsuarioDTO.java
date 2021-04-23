@@ -9,7 +9,7 @@ public class UsuarioDTO {
     private String nome;
     private String email;
     private String login;
-    private String senha;
+
     private Long escola;
     private String nivel;
     private String recuperar;
