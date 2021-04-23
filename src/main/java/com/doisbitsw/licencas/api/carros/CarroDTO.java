@@ -2,6 +2,7 @@ package com.doisbitsw.licencas.api.carros;
 
 import lombok.Data;
 import org.apache.commons.lang3.ObjectUtils;
+import org.codehaus.jackson.annotate.JsonIgnore;
 import org.modelmapper.ModelMapper;
 
 @Data
@@ -14,6 +15,7 @@ public class CarroDTO {
     private String urlVideo;
     private String latitude;
     private String longitude;
+    @JsonIgnore
     private String novo;
 
     /*public CarroDTO(Carro carro) {
