@@ -24,8 +24,8 @@ public class Carro {
     private String urlVideo;
     private String latitude;
     private String longitude;
-    @JsonIgnore
-    private String novo;
+   /* @JsonIgnore
+    private String novo;*/
 
 
 }
