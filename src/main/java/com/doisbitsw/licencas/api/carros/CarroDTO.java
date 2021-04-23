@@ -14,6 +14,7 @@ public class CarroDTO {
     private String urlVideo;
     private String latitude;
     private String longitude;
+    private String novo;
 
     /*public CarroDTO(Carro carro) {
         this.id = carro.getId();
