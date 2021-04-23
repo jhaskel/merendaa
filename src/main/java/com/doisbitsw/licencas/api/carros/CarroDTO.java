@@ -1,5 +1,6 @@
 package com.doisbitsw.licencas.api.carros;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 import org.modelmapper.ModelMapper;
 
@@ -13,7 +14,8 @@ public class CarroDTO {
     private String urlVideo;
     private String latitude;
     private String longitude;
-    private String novo;
+    @JsonIgnore
+    private String teste;
 
 
     public static CarroDTO create(Carro carro) {
