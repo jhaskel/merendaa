@@ -1,5 +1,6 @@
 package com.doisbitsw.licencas.api.carros;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -23,6 +24,7 @@ public class Carro {
     private String urlVideo;
     private String latitude;
     private String longitude;
+    @JsonIgnore
     private String novo;
 
 
