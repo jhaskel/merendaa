@@ -47,4 +47,16 @@ public class UserController {
                 .buildAndExpand(id).toUri();
     }
 
+    @PutMapping("/{id}")
+    public ResponseEntity put(@PathVariable("id") Long id, @RequestBody User user) {
+
+        user.setId(id);
+
+        UserDTO c = service.update(user, id);
+
+        return c != null ?
+                ResponseEntity.ok(c) :
+                ResponseEntity.notFound().build();
+    }
+
 }
