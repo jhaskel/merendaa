@@ -30,4 +30,31 @@ public class UserService {
         Optional<User> carro = rep.findById(id);
         return carro.map(UserDTO::create).orElseThrow(() -> new ObjectNotFoundException("Rotas não encontrado"));
     }
+
+
+    public UserDTO update(User user, Long id) {
+        Assert.notNull(id,"Não foi possível atualizar o registro");
+
+        // Busca o carro no banco de dados
+        Optional<User> optional = rep.findById(id);
+        if(optional.isPresent()) {
+            User db = optional.get();
+            // Copiar as propriedades
+            db.setAtivo(user.getAtivo());
+
+            System.out.println("Nivel id " + db.getId());
+            // Atualiza o carro
+            rep.save(db);
+
+            return UserDTO.create(db);
+        } else {
+            return null;
+            //throw new RuntimeException("Não foi possível atualizar o registro");
+        }
+    }
+
+    public void delete(Long id) {
+        rep.deleteById(id);
+    }
+
 }
