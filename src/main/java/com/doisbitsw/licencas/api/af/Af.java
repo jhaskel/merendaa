@@ -28,6 +28,7 @@ public class Af {
     private String pedido;
     private Double total;
     private Long despesa;
+    private Long despesax;
     private String numero;
 
 
