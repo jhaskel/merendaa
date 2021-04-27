@@ -23,6 +23,7 @@ public class Contabilidade {
     private Long projeto;
     private String nomeProjeto;
     private Long cod;
+    private Long code;
     private String elemento;
     private Long nivel;
     private Double orcamento;
