@@ -10,7 +10,7 @@ public interface ContabilidadeRepository extends JpaRepository<Contabilidade, Lo
     @Query(value = "SELECT * FROM contabilidade ", nativeQuery = true)
     List<Contabilidade> findAll();
 
-    @Query(value = "SELECT * FROM contabilidade WHERE code = :code and nivel = :nivel ", nativeQuery = true)
+    @Query(value = "SELECT * FROM contabilidade WHERE code = :code and nivel = :nivel and isativo = true ", nativeQuery = true)
     List<Contabilidade> findCod(Long code,Long nivel);
 
     @Query(value = "SELECT * FROM contabilidade WHERE nivel = :nivel ", nativeQuery = true)
