@@ -6,7 +6,7 @@ import org.modelmapper.ModelMapper;
 @Data
 public class ComprasDTO {
     private Long id;
-    private String cod;
+    private Long cod;
     private String pedido;
     private Long escola;
     private Long nivel;

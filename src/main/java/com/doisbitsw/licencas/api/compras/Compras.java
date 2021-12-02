@@ -16,7 +16,7 @@ public class Compras {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String cod;
+    private Long cod;
     private String pedido;
     private Long escola;
     private Long nivel;

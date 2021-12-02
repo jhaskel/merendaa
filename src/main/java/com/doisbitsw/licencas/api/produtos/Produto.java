@@ -18,7 +18,7 @@ public class Produto {
     private Long id;
     private Long categoria;
     private Long fornecedor;
-    private String code;
+    private Long code;
     private String nome;
     private String alias;
     private Double quantidade;

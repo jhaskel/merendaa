@@ -29,7 +29,7 @@ public class ProdutoController {
     }
 
     @GetMapping("/code/{code}")
-    public ResponseEntity getCarrosByCode(@PathVariable("code") String code) {
+    public ResponseEntity getCarrosByCode(@PathVariable("code") Long code) {
         List<ProdutoDTO> carros = service.getCarrosByCode(code);
         return carros.isEmpty() ?
                 ResponseEntity.noContent().build() :

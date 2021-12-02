@@ -25,7 +25,7 @@ public class ProdutoService {
         return carro.map(ProdutoDTO::create).orElseThrow(() -> new ObjectNotFoundException("Carro não encontrado"));
     }
 
-    public List<ProdutoDTO> getCarrosByCode(String code) {
+    public List<ProdutoDTO> getCarrosByCode(Long code) {
         return rep.findByCode(code).stream().map(ProdutoDTO::create).collect(Collectors.toList());
     }
 
